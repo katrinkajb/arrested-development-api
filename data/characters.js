@@ -2,7 +2,7 @@ module.exports = [
     {
         name: "Michael",
         full_name: "Michael Bluth",
-        aliases: ["Nichael Bluth", "Chareth Cutestory"],
+        // aliases: ["Nichael Bluth", "Chareth Cutestory"],
         pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/f/f7/1x01_Pilot_%2809%29.png/revision/latest?cb=20120301043946",
         actor: "Jason Bateman",
         // episodes: [],
@@ -10,7 +10,7 @@ module.exports = [
     {
         name: "Lindsay",
         full_name: "Lindsay Bluth Fünke",
-        aliases: ["Nellie Sitwell"],
+        // aliases: ["Nellie Sitwell"],
         pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/8/8d/Season_1_Character_Promos_-_Lindsay_Bluth_F%C3%BCnke_03.jpeg/revision/latest?cb=20120429230807",
         actor: "Portia de Rossi",
         // episodes: []
@@ -18,7 +18,7 @@ module.exports = [
     {
         name: "Gob",
         full_name: "George Oscar Bluth, Jr.",
-        aliases: ["G.O.B."],
+        // aliases: ["G.O.B."],
         pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/0/02/Season_1_Character_Promos_-_G.O.B.jpeg/revision/latest?cb=20120429230530",
         actor: "Will Arnett",
         // episodes: [],
@@ -26,7 +26,7 @@ module.exports = [
     {
         name: "George Michael",
         full_name: "George Michael Bluth",
-        aliases: ["George Maharis", "Mr. Manager"],
+        // aliases: ["George Maharis", "Mr. Manager"],
         picture:
             "https://static.wikia.nocookie.net/arresteddevelopment/images/c/c3/Season_1_Character_Promos_-_George_Michael_Bluth_02.jpeg/revision/latest?cb=20120429230332",
         actor: "Michael Cera",
@@ -35,7 +35,7 @@ module.exports = [
     {
         name: "Maeby",
         full_name: "Maeby Fünke",
-        aliases: ["Surely"],
+        // aliases: ["Surely"],
         pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/c/c2/Season_1_Character_Promos_-_Maeby_F%C3%BCnke_02.jpeg/revision/latest?cb=20120429230807",
         actor: "Alia Shawkat",
         // episodes: [],
@@ -43,7 +43,7 @@ module.exports = [
     {
         name: "Buster",
         full_name: "Buster Bluth",
-        aliases: ["Baby Buster"],
+        // aliases: ["Baby Buster"],
         pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/e/e3/Season_1_Character_Promos_-_Buster_Bluth_02.jpeg/revision/latest?cb=20120429230331",
         actor: "Tony Hale",
         // episodes: [],
@@ -51,7 +51,7 @@ module.exports = [
     {
         name: "Tobias",
         full_name: "Dr. Tobias Onyango Fünke",
-        aliases: ["Frightened Inmate #2", "Mrs Featherbottom"],
+        // aliases: ["Frightened Inmate #2", "Mrs Featherbottom"],
         pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/0/0a/Season_1_Character_Promos_-_Tobias_F%C3%BCnke_02.jpeg/revision/latest?cb=20120429230332",
         actor: "David Cross",
         // episodes: [],
@@ -59,7 +59,7 @@ module.exports = [
     {
         name: "George",
         full_name: "George Oscar Bluth, Sr.",
-        aliases: ["Pop-pop", "Prisoner # 1881372911"],
+        // aliases: ["Pop-pop", "Prisoner # 1881372911"],
         pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/4/40/Season_1_Character_Promos_-_George_Bluth_03.jpeg/revision/latest?cb=20120429230332",
         actor: "Jeffrey Tambor",
         // episodes: [],
@@ -67,7 +67,7 @@ module.exports = [
     {
         name: "Lucille",
         full_name: "Lucille Bluth",
-        aliases: ["Lucille 1"],
+        // aliases: ["Lucille 1"],
         pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/4/49/Season_1_Character_Promos_-_Lucille_Bluth_02.jpeg/revision/latest?cb=20120429230529",
         actor: "Jessica Walter",
         // episodes: [],

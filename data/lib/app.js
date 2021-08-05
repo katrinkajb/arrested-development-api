@@ -11,7 +11,9 @@ app.use(morgan("dev"));
 
 app.get("/characters", async (req, res) => {
     try {
+        console.log("something");
         const data = await client.query("SELECT * from characters");
+        console.log(data);
 
         res.json(data.rows);
     } catch (e) {

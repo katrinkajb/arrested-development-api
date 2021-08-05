@@ -5,7 +5,6 @@ module.exports = [
         // aliases: ["Nichael Bluth", "Chareth Cutestory"],
         pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/f/f7/1x01_Pilot_%2809%29.png/revision/latest?cb=20120301043946",
         actor: "Jason Bateman",
-        // episodes: [],
     },
     {
         name: "Lindsay",
@@ -13,7 +12,6 @@ module.exports = [
         // aliases: ["Nellie Sitwell"],
         pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/8/8d/Season_1_Character_Promos_-_Lindsay_Bluth_F%C3%BCnke_03.jpeg/revision/latest?cb=20120429230807",
         actor: "Portia de Rossi",
-        // episodes: []
     },
     {
         name: "Gob",
@@ -21,7 +19,6 @@ module.exports = [
         // aliases: ["G.O.B."],
         pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/0/02/Season_1_Character_Promos_-_G.O.B.jpeg/revision/latest?cb=20120429230530",
         actor: "Will Arnett",
-        // episodes: [],
     },
     {
         name: "George Michael",
@@ -30,7 +27,6 @@ module.exports = [
         picture:
             "https://static.wikia.nocookie.net/arresteddevelopment/images/c/c3/Season_1_Character_Promos_-_George_Michael_Bluth_02.jpeg/revision/latest?cb=20120429230332",
         actor: "Michael Cera",
-        // episodes: [],
     },
     {
         name: "Maeby",
@@ -38,7 +34,6 @@ module.exports = [
         // aliases: ["Surely"],
         pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/c/c2/Season_1_Character_Promos_-_Maeby_F%C3%BCnke_02.jpeg/revision/latest?cb=20120429230807",
         actor: "Alia Shawkat",
-        // episodes: [],
     },
     {
         name: "Buster",
@@ -46,7 +41,6 @@ module.exports = [
         // aliases: ["Baby Buster"],
         pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/e/e3/Season_1_Character_Promos_-_Buster_Bluth_02.jpeg/revision/latest?cb=20120429230331",
         actor: "Tony Hale",
-        // episodes: [],
     },
     {
         name: "Tobias",
@@ -54,7 +48,6 @@ module.exports = [
         // aliases: ["Frightened Inmate #2", "Mrs Featherbottom"],
         pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/0/0a/Season_1_Character_Promos_-_Tobias_F%C3%BCnke_02.jpeg/revision/latest?cb=20120429230332",
         actor: "David Cross",
-        // episodes: [],
     },
     {
         name: "George",
@@ -62,7 +55,6 @@ module.exports = [
         // aliases: ["Pop-pop", "Prisoner # 1881372911"],
         pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/4/40/Season_1_Character_Promos_-_George_Bluth_03.jpeg/revision/latest?cb=20120429230332",
         actor: "Jeffrey Tambor",
-        // episodes: [],
     },
     {
         name: "Lucille",
@@ -70,6 +62,5 @@ module.exports = [
         // aliases: ["Lucille 1"],
         pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/4/49/Season_1_Character_Promos_-_Lucille_Bluth_02.jpeg/revision/latest?cb=20120429230529",
         actor: "Jessica Walter",
-        // episodes: [],
     },
 ];

@@ -1,7 +1,7 @@
 const client = require("./lib/client");
 // import our seed data:
-const characters = require("./characters.js");
-const { getEmoji } = require("./lib/emoji.js");
+const characters = require("./tables/characters");
+const { getEmoji } = require("./lib/emojis.js");
 
 run();
 

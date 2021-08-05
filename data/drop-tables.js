@@ -1,5 +1,5 @@
 const client = require("./lib/client");
-const { getEmoji } = require("./lib/emoji.js");
+const { getEmoji } = require("./lib/emojis.js");
 
 run();
 

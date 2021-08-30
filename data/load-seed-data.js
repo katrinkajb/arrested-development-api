@@ -1,5 +1,6 @@
 const client = require("./lib/client");
 const characters = require("./tables/characters");
+const quotes = require("./tables/quotes");
 const { getEmoji } = require("./lib/emojis.js");
 
 run();
@@ -12,15 +13,28 @@ async function run() {
             characters.map((character) => {
                 return client.query(
                     `
-                    INSERT INTO characters (name, full_name, pic, actor)
-                    VALUES ($1, $2, $3, $4);
-                `,
+                    INSERT INTO characters (name, full_name, aliases, pic, actor)
+                    VALUES ($1, $2, $3, $4, $5);
+                    `,
                     [
                         character.name,
                         character.full_name,
+                        character.aliases,
                         character.pic,
                         character.actor,
                     ]
+                );
+            })
+        );
+
+        await Promise.all(
+            quotes.map((quote) => {
+                return client.query(
+                    `
+                    INSERT INTO quotes (quote, said_by)
+                    VALUES ($1, $2);
+                    `,
+                    [quote.quote, quote.said_by]
                 );
             })
         );

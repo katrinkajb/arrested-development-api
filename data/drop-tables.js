@@ -9,6 +9,7 @@ async function run() {
 
         await client.query(`
             DROP TABLE IF EXISTS characters;
+            DROP TABLE IF EXISTS quotes;
         `);
 
         console.log(

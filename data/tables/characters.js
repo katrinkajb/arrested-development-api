@@ -2,7 +2,7 @@ module.exports = [
     {
         name: "Michael",
         full_name: "Michael Bluth",
-        aliases: "Nichael Bluth, Chareth Cutestory"
+        aliases: "Nichael Bluth, Chareth Cutestory",
         pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/f/f7/1x01_Pilot_%2809%29.png/revision/latest?cb=20120301043946",
         actor: "Jason Bateman",
     },
@@ -36,7 +36,7 @@ module.exports = [
     },
     {
         name: "Buster",
-        full_name: "Buster Bluth",
+        full_name: "Byron 'Buster' Bluth",
         aliases: "Baby Buster",
         pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/e/e3/Season_1_Character_Promos_-_Buster_Bluth_02.jpeg/revision/latest?cb=20120429230331",
         actor: "Tony Hale",

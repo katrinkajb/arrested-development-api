@@ -8,7 +8,7 @@ async function run() {
         await client.connect();
 
         await client.query(`
-            DROP TABLE IF EXISTS characters;
+            DROP TABLE IF EXISTS characters CASCADE;
             DROP TABLE IF EXISTS quotes;
         `);
 

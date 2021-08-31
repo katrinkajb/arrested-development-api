@@ -13,9 +13,25 @@ app.use(morgan("dev"));
 app.get("/characters", async (req, res) => {
     try {
         const data = await client.query("SELECT * from characters");
-        console.log(data);
 
         res.json(data.rows);
+    } catch (e) {
+        res.status(500).json({ error: e.message });
+    }
+});
+
+// get character by id
+app.get("/characters/:id", async (req, res) => {
+    try {
+        const data = await client.query(
+            `
+        SELECT * from characters 
+        WHERE id=$1
+        `,
+            [req.params.id]
+        );
+
+        res.json(data.rows[0]);
     } catch (e) {
         res.status(500).json({ error: e.message });
     }
@@ -25,7 +41,6 @@ app.get("/characters", async (req, res) => {
 app.get("/quotes", async (req, res) => {
     try {
         const data = await client.query("SELECT * from quotes");
-        console.log(data);
 
         res.json(data.rows);
     } catch (e) {
@@ -43,7 +58,6 @@ app.get("/quotes/:characterId", async (req, res) => {
         `,
             [req.params.characterId]
         );
-        console.log(data);
 
         res.json(data.rows);
     } catch (e) {

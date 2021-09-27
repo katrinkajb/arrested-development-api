@@ -37,10 +37,34 @@ app.get("/characters/:id", async (req, res) => {
     }
 });
 
+// search characters by name
+// app.get("/characters?search=:search", async (req, res) => {
+//     try {
+//         const data = await client.query(
+//             `
+//         SELECT * from characters
+//         WHERE name CONTAINS(name, 'search')
+//         `,
+//             [req.params.search]
+//         );
+
+//         res.json(data.rows[0]);
+//     } catch (e) {
+//         res.status(500).json({ error: e.message });
+//     }
+// });
+
 // get all quotes
 app.get("/quotes", async (req, res) => {
     try {
-        const data = await client.query("SELECT * from quotes");
+        const data = await client.query(`
+            SELECT 
+            quote,
+            characters.name
+            FROM quotes
+            INNER JOIN characters 
+            ON quotes.said_by = characters.id
+        `);
 
         res.json(data.rows);
     } catch (e) {
@@ -48,13 +72,18 @@ app.get("/quotes", async (req, res) => {
     }
 });
 
-// get quotes by character id
+// get all quotes for one character - change to return said_by name
 app.get("/quotes/:characterId", async (req, res) => {
     try {
         const data = await client.query(
             `
-        SELECT * from quotes 
-        WHERE said_by=$1
+            SELECT 
+            quote,
+            characters.name
+            FROM quotes
+            INNER JOIN characters 
+            ON quotes.said_by = characters.id
+            WHERE quotes.said_by=$1
         `,
             [req.params.characterId]
         );
@@ -64,6 +93,23 @@ app.get("/quotes/:characterId", async (req, res) => {
         res.status(500).json({ error: e.message });
     }
 });
+
+// get random quote
+// app.get("/quotes/random", async (req, res) => {
+//     try {
+//         const data = await client.query(
+//             `
+//         SELECT * from characters
+//         WHERE id=$1
+//         `,
+//             [req.params.id]
+//         );
+
+//         res.json(data.rows[0]);
+//     } catch (e) {
+//         res.status(500).json({ error: e.message });
+//     }
+// });
 
 app.use(require("./middleware/error"));
 

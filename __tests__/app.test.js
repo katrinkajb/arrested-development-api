@@ -40,6 +40,25 @@ describe("app routes", () => {
                 .expect(200);
             expect(data.body).toEqual(expectation);
         });
+
+        test("returns all characters with a name that contains the search query", async () => {
+            const expectation = [
+                {
+                    id: 1,
+                    name: "Michael",
+                    full_name: "Michael Bluth",
+                    aliases: "Nichael Bluth, Chareth Cutestory",
+                    pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/f/f7/1x01_Pilot_%2809%29.png/revision/latest?cb=20120301043946",
+                    actor: "Jason Bateman",
+                },
+            ];
+
+            const data = await fakeRequest(app)
+                .get("characters/search=michael")
+                .expect("Content-Type", /json/)
+                .expect(200);
+            expect(data.body).toEqual(expectation);
+        });
     });
 
     describe("quotes tests", () => {

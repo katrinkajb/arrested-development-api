@@ -15,7 +15,7 @@ module.exports = [
     },
     {
         name: "Gob",
-        full_name: "George Oscar Bluth, Jr.",
+        full_name: "George Oscar 'GOB' Bluth, Jr.",
         aliases: "G.O.B.",
         pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/0/02/Season_1_Character_Promos_-_G.O.B.jpeg/revision/latest?cb=20120429230530",
         actor: "Will Arnett",

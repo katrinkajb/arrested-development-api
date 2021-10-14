@@ -12,7 +12,7 @@ app.use(morgan("dev"));
 // get all characters
 app.get("/characters", async (req, res) => {
     try {
-        const data = await client.query("SELECT * from characters");
+        const data = await client.query("SELECT * FROM characters");
 
         res.json(data.rows);
     } catch (e) {
@@ -25,7 +25,8 @@ app.get("/characters/:id", async (req, res) => {
     try {
         const data = await client.query(
             `
-        SELECT * from characters 
+        SELECT * 
+        FROM characters 
         WHERE id=$1
         `,
             [req.params.id]
@@ -38,14 +39,16 @@ app.get("/characters/:id", async (req, res) => {
 });
 
 // search characters by name
-// app.get("/characters?search=:search", async (req, res) => {
+// app.get("/characters?search=:query", async (req, res) => {
 //     try {
 //         const data = await client.query(
 //             `
-//         SELECT * from characters
-//         WHERE name CONTAINS(name, 'search')
+//         SELECT *
+//         FROM characters
+//         WHERE
+//         CONTAINS(full_name, query)
 //         `,
-//             [req.params.search]
+//             [req.params.query]
 //         );
 
 //         res.json(data.rows[0]);
@@ -95,21 +98,8 @@ app.get("/quotes/:characterId", async (req, res) => {
 });
 
 // get random quote
-// app.get("/quotes/random", async (req, res) => {
-//     try {
-//         const data = await client.query(
-//             `
-//         SELECT * from characters
-//         WHERE id=$1
-//         `,
-//             [req.params.id]
-//         );
-
-//         res.json(data.rows[0]);
-//     } catch (e) {
-//         res.status(500).json({ error: e.message });
-//     }
-// });
+// Get x number of quotes
+// search quotes by query
 
 app.use(require("./middleware/error"));
 

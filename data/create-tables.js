@@ -21,6 +21,10 @@ async function run() {
                 id SERIAL PRIMARY KEY NOT NULL,
                 quote VARCHAR(512) NOT NULL,
                 said_by INTEGER NOT NULL REFERENCES characters(id)
+            );
+
+            CREATE TABLE chickens (
+                url VARCHAR(512) NOT NULL
             )
         `);
 

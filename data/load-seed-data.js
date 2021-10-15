@@ -1,6 +1,7 @@
 const client = require("./lib/client");
 const characters = require("./tables/characters");
 const quotes = require("./tables/quotes");
+const chickens = require("./tables/chickens");
 const { getEmoji } = require("./lib/emojis.js");
 
 run();
@@ -35,6 +36,18 @@ async function run() {
                     VALUES ($1, $2);
                     `,
                     [quote.quote, quote.said_by]
+                );
+            })
+        );
+
+        await Promise.all(
+            chickens.map((chicken) => {
+                return client.query(
+                    `
+                    INSERT INTO chickens (url)
+                    VALUES ($1);
+                    `,
+                    [chicken.url]
                 );
             })
         );

@@ -101,6 +101,18 @@ app.get("/quotes/:characterId", async (req, res) => {
 // Get x number of quotes
 // search quotes by query
 
+// Chicken dance gifs
+app.get("/chicken", async (req, res) => {
+    try {
+        const data = await client.query(`
+            SELECT url FROM chickens
+        `);
+
+        res.json(data.rows);
+    } catch (e) {
+        res.status(500).json({ error: e.message });
+    }
+});
 app.use(require("./middleware/error"));
 
 module.exports = app;

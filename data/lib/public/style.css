@@ -1,0 +1,24 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url("https://static.vecteezy.com/system/resources/previews/000/629/095/original/hand-drawn-banana-pattern-vector.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: rgb(0, 3, 17);
+}
+
+main {
+    background-color: rgb(243, 232, 212);
+}
+
+header {
+    font-weight: 900;
+    font-size: larger;
+    background-color: rgb(243, 232, 212);
+    margin-bottom: 3em;
+}
+
+.title {
+    font-weight: 600;
+}

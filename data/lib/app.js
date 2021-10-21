@@ -9,10 +9,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan("dev"));
 
-// get all characters
+// GET ALL CHARACTERS
 app.get("/characters", async (req, res) => {
     try {
-        const data = await client.query("SELECT * from characters");
+        const data = await client.query("SELECT * FROM characters");
 
         res.json(data.rows);
     } catch (e) {
@@ -20,12 +20,13 @@ app.get("/characters", async (req, res) => {
     }
 });
 
-// get character by id
+// GET CHARACTER BY ID
 app.get("/characters/:id", async (req, res) => {
     try {
         const data = await client.query(
             `
-        SELECT * from characters 
+        SELECT * 
+        FROM characters 
         WHERE id=$1
         `,
             [req.params.id]
@@ -37,10 +38,35 @@ app.get("/characters/:id", async (req, res) => {
     }
 });
 
-// get all quotes
+// SEARCH CHARACTERS BY NAME
+app.get("/characters/search=:query", async (req, res) => {
+    try {
+        const data = await client.query(
+            `
+        SELECT *
+        FROM characters
+        WHERE full_name LIKE %query%=$1
+        `,
+            [req.params.query]
+        );
+
+        res.json(data.rows[0]);
+    } catch (e) {
+        res.status(500).json({ error: e.message });
+    }
+});
+
+// GET ALL QUOTES
 app.get("/quotes", async (req, res) => {
     try {
-        const data = await client.query("SELECT * from quotes");
+        const data = await client.query(`
+            SELECT 
+            quote,
+            characters.name
+            FROM quotes
+            INNER JOIN characters 
+            ON quotes.said_by = characters.id
+        `);
 
         res.json(data.rows);
     } catch (e) {
@@ -48,13 +74,18 @@ app.get("/quotes", async (req, res) => {
     }
 });
 
-// get quotes by character id
+// GET ALL QUOTES BY CHARACTER ID
 app.get("/quotes/:characterId", async (req, res) => {
     try {
         const data = await client.query(
             `
-        SELECT * from quotes 
-        WHERE said_by=$1
+            SELECT 
+            quote,
+            characters.name
+            FROM quotes
+            INNER JOIN characters 
+            ON quotes.said_by = characters.id
+            WHERE quotes.said_by=$1
         `,
             [req.params.characterId]
         );
@@ -65,6 +96,22 @@ app.get("/quotes/:characterId", async (req, res) => {
     }
 });
 
+// get random quote
+// Get x number of quotes
+// search quotes by query
+
+// CHICKEN DANCE GIFS
+app.get("/chicken", async (req, res) => {
+    try {
+        const data = await client.query(`
+            SELECT url FROM chickens
+        `);
+
+        res.json(data.rows);
+    } catch (e) {
+        res.status(500).json({ error: e.message });
+    }
+});
 app.use(require("./middleware/error"));
 
 module.exports = app;

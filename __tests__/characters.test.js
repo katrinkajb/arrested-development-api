@@ -1,5 +1,4 @@
 require("dotenv").config();
-
 const { execSync } = require("child_process");
 const fakeRequest = require("supertest");
 const app = require("../data/lib/app");
@@ -54,28 +53,10 @@ describe("app routes", () => {
             ];
 
             const data = await fakeRequest(app)
-                .get("characters/search=michael")
-                .expect("Content-Type", /json/)
-                .expect(200);
+                .get("/characters/search=Michael")
+                .expect("Content-Type", /json/);
+            // .expect(200);
             expect(data.body).toEqual(expectation);
-        });
-    });
-
-    describe("quotes tests", () => {
-        test("returns all quotes", async () => {
-            const data = await fakeRequest(app)
-                .get("/quotes")
-                .expect("Content-Type", /json/)
-                .expect(200);
-            expect(data.body).toEqual(expect.any(Array));
-        });
-
-        test("returns all quotes for one character by character id", async () => {
-            const data = await fakeRequest(app)
-                .get("/quotes/9")
-                .expect("Content-Type", /json/)
-                .expect(200);
-            expect(data.body).toEqual(expect.any(Array));
         });
     });
 });

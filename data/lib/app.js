@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan("dev"));
 
-// get all characters
+// GET ALL CHARACTERS
 app.get("/characters", async (req, res) => {
     try {
         const data = await client.query("SELECT * FROM characters");
@@ -20,7 +20,7 @@ app.get("/characters", async (req, res) => {
     }
 });
 
-// get character by id
+// GET CHARACTER BY ID
 app.get("/characters/:id", async (req, res) => {
     try {
         const data = await client.query(
@@ -38,26 +38,25 @@ app.get("/characters/:id", async (req, res) => {
     }
 });
 
-// search characters by name
-// app.get("/characters?search=:query", async (req, res) => {
-//     try {
-//         const data = await client.query(
-//             `
-//         SELECT *
-//         FROM characters
-//         WHERE
-//         CONTAINS(full_name, query)
-//         `,
-//             [req.params.query]
-//         );
+// SEARCH CHARACTERS BY NAME
+app.get("/characters/search=:query", async (req, res) => {
+    try {
+        const data = await client.query(
+            `
+        SELECT *
+        FROM characters
+        WHERE full_name LIKE %query%=$1
+        `,
+            [req.params.query]
+        );
 
-//         res.json(data.rows[0]);
-//     } catch (e) {
-//         res.status(500).json({ error: e.message });
-//     }
-// });
+        res.json(data.rows[0]);
+    } catch (e) {
+        res.status(500).json({ error: e.message });
+    }
+});
 
-// get all quotes
+// GET ALL QUOTES
 app.get("/quotes", async (req, res) => {
     try {
         const data = await client.query(`
@@ -75,7 +74,7 @@ app.get("/quotes", async (req, res) => {
     }
 });
 
-// get all quotes for one character - change to return said_by name
+// GET ALL QUOTES BY CHARACTER ID
 app.get("/quotes/:characterId", async (req, res) => {
     try {
         const data = await client.query(
@@ -101,7 +100,7 @@ app.get("/quotes/:characterId", async (req, res) => {
 // Get x number of quotes
 // search quotes by query
 
-// Chicken dance gifs
+// CHICKEN DANCE GIFS
 app.get("/chicken", async (req, res) => {
     try {
         const data = await client.query(`

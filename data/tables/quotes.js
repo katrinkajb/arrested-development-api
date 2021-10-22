@@ -220,23 +220,23 @@ module.exports = [
         said_by: 3,
     },
     {
-        quote: "Is That George Michael’s Girlfriend? What, Is She Funny Or Something?",
+        quote: "Is that George Michael’s girlfriend? What, is she funny or something?",
         said_by: 3,
     },
     {
-        quote: "She’s Not ‘That’ Mexican, Mom, She’s My Mexican. And She’s Colombian Or Something.",
+        quote: "She’s not ‘that’ Mexican, mom, she’s my Mexican. And she’s Colombian or something.",
         said_by: 3,
     },
     {
-        quote: "I Hear The Jury’s Still Out On Science.",
+        quote: "I hear the jury’s still out on science.",
         said_by: 3,
     },
     {
-        quote: "Why Go To A Banana Stand When We Can Make Your Banana Stand?",
+        quote: "Why go to a banana stand when we can make your banana stand?",
         said_by: 3,
     },
     {
-        quote: "Yeah, The Guy In The $3,000 Suit Is Holding The Elevator For The Guy Who Doesn’t Make That In Four Months. Come On!",
+        quote: "Yeah, the guy in the $3,000 suit is holding the elevator for the guy who doesn’t make that in four months. Come On!",
         said_by: 3,
     },
     {
@@ -256,7 +256,7 @@ module.exports = [
         said_by: 3,
     },
     {
-        quote: "I know what an erection feels like, Michael. No, it’s the opposite. It’s like my heart is getting hard.",
+        quote: "(about love) I know what an erection feels like, Michael. No, it’s the opposite. It’s like my heart is getting hard.",
         said_by: 3,
     },
     {
@@ -276,15 +276,15 @@ module.exports = [
         said_by: 4,
     },
     {
-        quote: "I Had Another Hearing. I Think I'm Going To Get Off. I Have A Good Lawyer.",
+        quote: "I had another hearing. I think I'm going to get off. I have a good lawyer.",
         said_by: 11,
     },
     {
-        quote: "Does This Look Contagious To You?",
+        quote: "Does this look contagious to you?",
         said_by: 11,
     },
     {
-        quote: "The Will Is At My Office, Next To The Hot Plate With The Frayed Wires.",
+        quote: "The will is at my office. Next to the hot plate with the frayed wires.",
         said_by: 11,
     },
     {
@@ -298,5 +298,9 @@ module.exports = [
     {
         quote: "You don't have to worry so much. I mean, obviously your dad doesn't want to spend time with you, but, you know, go to the beach or whatever.",
         said_by: 5,
+    },
+    {
+        quote: "There's always money in the banana stand",
+        said_by: 4,
     },
 ];

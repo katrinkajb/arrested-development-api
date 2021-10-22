@@ -8,37 +8,57 @@
         <title>Arrested Development API</title>
     </head>
     <body>
+        <!-- put Bluth company logo on Header -->
         <header>Arrested Development API</header>
         <main>
-            Characters Endpoints
+            <span class="title">Base URL: </span
+            >https://arrested-development-api.herokuapp.company
+
+            <div>Characters Endpoints</div>
             <ul>
                 <li>
-                    <span class="title">Get all Characters: </span
-                    >https://arrested-development-api.herokuapp.com/characters
+                    <span class="title">Get all Characters: </span>/characters
                 </li>
                 <li>
                     <span class="title">Get character by id: </span
-                    >https://arrested-development-api.herokuapp.com/characters/id
+                    >/characters/id
+                </li>
+                <li>
+                    <span class="title">Search characters: </span
+                    >/characters/search/:query
+                </li>
+                <li>
+                    <span class="title">Get a random character: </span
+                    >/characters/random
                 </li>
             </ul>
 
             Quotes Endpoints
             <ul>
-                <li>
-                    <span class="title">Get all Quotes: </span
-                    >https://arrested-development-api.herokuapp.com/quotes
-                </li>
+                <li><span class="title">Get all Quotes: </span>/quotes</li>
                 <li>
                     <span class="title">Get all quotes for a character: </span
-                    >https://arrested-development-api.herokuapp.com/quotes/id
+                    >/quotes/id
+                </li>
+                <li>
+                    <span class="title">Search quotes: </span
+                    >/quotes/search/:query
+                </li>
+                <li>
+                    <span class="title">Get a random quote: </span
+                    >/quotes/random
                 </li>
             </ul>
 
             Chicken Dance Endpoints
             <ul>
                 <li>
-                    <span class="title">Get all Chicken Dance gifs: </span
-                    >https://arrested-development-api.herokuapp.com/chicken
+                    <span class="title">Get all chicken dance gifs: </span
+                    >/chicken
+                </li>
+                <li>
+                    <span class="title">Get a random Chicken Dance gif: </span
+                    >/chicken/random
                 </li>
             </ul>
         </main>

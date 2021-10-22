@@ -24,6 +24,7 @@ async function run() {
             );
 
             CREATE TABLE chickens (
+                id SERIAL PRIMARY KEY NOT NULL,
                 url VARCHAR(512) NOT NULL
             )
         `);

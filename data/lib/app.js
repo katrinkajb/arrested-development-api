@@ -1,13 +1,13 @@
 const characters = require("../tables/characters");
 const quotes = require("../tables/quotes");
 const chickens = require("../tables/chickens");
-
 const express = require("express");
 const cors = require("cors");
 const client = require("./client.js");
 const app = express();
 const morgan = require("morgan");
 
+app.use(express.static(`${__dirname}/../public`));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

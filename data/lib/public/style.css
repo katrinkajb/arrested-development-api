@@ -9,14 +9,26 @@ body {
 }
 
 main {
-    background-color: rgb(243, 232, 212);
+    background-color: rgba(255, 151, 15, 0.959);
+    border-radius: 5px;
+    padding: 10px;
 }
 
 header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-weight: 900;
     font-size: larger;
-    background-color: rgb(243, 232, 212);
     margin-bottom: 3em;
+    background-color: rgba(255, 151, 15, 0.959);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+img {
+    height: 150px;
+    width: auto;
 }
 
 .title {

@@ -1,7 +1,7 @@
 {
     "name": "arrested-development-show-api",
     "version": "1.0.0",
-    "description": "",
+    "description": "An API to get data about the tv show Arrested Development",
     "main": "server.js",
     "scripts": {
         "test": "jest --verbose --runInBand --testLocationInResults --setupFiles dotenv/config",
@@ -18,6 +18,9 @@
     "author": "",
     "license": "ISC",
     "devDependencies": {
+        "@babel/eslint-parser": "^7.15.7",
+        "@babel/plugin-syntax-class-properties": "^7.12.13",
+        "@types/pg": "^8.6.1",
         "@types/jest": "^26.0.20",
         "eslint": "^7.20.0",
         "jest": "^27.0.4",

@@ -104,7 +104,7 @@ module.exports = [
         said_by: 9,
     },
     {
-        quote: "Well I’d rather be dead in California than alive and in Arizona.",
+        quote: "Well I’d rather be dead in California than alive in Arizona.",
         said_by: 9,
     },
     {

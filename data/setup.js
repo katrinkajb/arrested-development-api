@@ -1,5 +1,5 @@
 const fs = require("fs").promises;
-const seedTables = require("./load-seed-data.js");
+const { seedTables } = require("./load-seed-data.js");
 
 module.exports = (pool) => {
     return fs

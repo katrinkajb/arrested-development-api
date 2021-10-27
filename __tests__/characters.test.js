@@ -1,18 +1,18 @@
-const pool = require("../lib/utils/pool");
-const setup = require("../data/setup");
+const pool = require("../lib/utils/pool.js");
+const setup = require("../data/setup.js");
 const request = require("supertest");
-const app = require("../lib/app");
+const app = require("../lib/app.js");
 
-describe.skip("character routes", () => {
+describe("character routes", () => {
     beforeEach(() => {
         return setup(pool);
     });
 
-    afterAll((done) => {
-        return pool.end(done);
+    afterAll(() => {
+        pool.end();
     });
 
-    it("returns all characters", async () => {
+    it.only("returns all characters", async () => {
         const data = await request(app)
             .get("/characters")
             .expect("Content-Type", /json/)

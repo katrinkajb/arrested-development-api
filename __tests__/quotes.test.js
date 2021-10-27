@@ -1,15 +1,14 @@
 require("dotenv").config();
-const { execSync } = require("child_process");
 const fakeRequest = require("supertest");
 const app = require("../data/lib/app");
 const client = require("../data/lib/client");
+const setup = require("../data/setup");
+const pool = require("../lib/utils/pool");
 
 describe("app routes", () => {
-    beforeAll(async () => {
-        execSync("npm run setup-db");
-
-        await client.connect();
-    }, 20000);
+    beforeEach(() => {
+        return setup(pool);
+    });
 
     afterAll((done) => {
         return client.end(done);

@@ -20,8 +20,8 @@ const seedTables = async () => {
         );
     });
 
-    await quotes.map((quote) => {
-        return pool.query(
+    await quotes.map(async (quote) => {
+        return await pool.query(
             `
                 INSERT INTO quotes (quote, said_by)
                 VALUES ($1, $2);
@@ -30,8 +30,8 @@ const seedTables = async () => {
         );
     });
 
-    await chickens.map((chicken) => {
-        return pool.query(
+    await chickens.map(async (chicken) => {
+        return await pool.query(
             `
                 INSERT INTO chickens (url)
                 VALUES ($1);

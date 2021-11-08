@@ -4,7 +4,7 @@ const app = require("../lib/app");
 const setup = require("../data/setup");
 const pool = require("../lib/utils/pool");
 
-describe.skip("app routes", () => {
+describe("app routes", () => {
     beforeEach(() => {
         return setup(pool);
     });

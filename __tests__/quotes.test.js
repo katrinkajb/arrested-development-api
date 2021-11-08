@@ -13,53 +13,51 @@ describe.skip("app routes", () => {
         return pool.end(done);
     });
 
-    describe("quotes tests", () => {
-        test("returns all quotes", async () => {
-            const data = await fakeRequest(app)
-                .get("/quotes")
-                .expect("Content-Type", /json/)
-                .expect(200);
-            expect(data.body).toEqual(expect.any(Array));
-        });
+    it("returns all quotes", async () => {
+        const data = await fakeRequest(app)
+            .get("/quotes")
+            .expect("Content-Type", /json/)
+            .expect(200);
+        expect(data.body).toEqual(expect.any(Array));
+    });
 
-        test("returns all quotes for one character by character id", async () => {
-            const data = await fakeRequest(app)
-                .get("/quotes/9")
-                .expect("Content-Type", /json/)
-                .expect(200);
-            expect(data.body).toEqual(expect.any(Array));
-        });
+    it("returns all quotes for one character by character id", async () => {
+        const data = await fakeRequest(app)
+            .get("/quotes/9")
+            .expect("Content-Type", /json/)
+            .expect(200);
+        expect(data.body).toEqual(expect.any(Array));
+    });
 
-        test("returns all quotes by search query", async () => {
-            const data = await fakeRequest(app)
-                .get("/quotes/search/Banana")
-                .expect("Content-Type", /json/)
-                .expect(200);
-            expect(data.body).toEqual([
-                {
-                    id: 24,
-                    quote: "I mean it’s one banana Michael, what could it cost, $10?",
-                    said_by: 9,
-                },
-                {
-                    id: 59,
-                    quote: "Why go to a banana stand when we can make your banana stand?",
-                    said_by: 3,
-                },
-                {
-                    id: 76,
-                    quote: "There's always money in the banana stand",
-                    said_by: 4,
-                },
-            ]);
-        });
+    it("returns all quotes by search query", async () => {
+        const data = await fakeRequest(app)
+            .get("/quotes/search/Banana")
+            .expect("Content-Type", /json/)
+            .expect(200);
+        expect(data.body).toEqual([
+            {
+                id: 24,
+                quote: "I mean it’s one banana Michael, what could it cost, $10?",
+                saidBy: 9,
+            },
+            {
+                id: 59,
+                quote: "Why go to a banana stand when we can make your banana stand?",
+                saidBy: 3,
+            },
+            {
+                id: 76,
+                quote: "There's always money in the banana stand",
+                saidBy: 4,
+            },
+        ]);
+    });
 
-        test("returns a random quote", async () => {
-            const data = await fakeRequest(app)
-                .get("/quotes/random")
-                .expect("Content-Type", /json/)
-                .expect(200);
-            expect(data.body).toEqual(expect.any(Object));
-        });
+    it("returns a random quote", async () => {
+        const data = await fakeRequest(app)
+            .get("/quotes/random")
+            .expect("Content-Type", /json/)
+            .expect(200);
+        expect(data.body).toEqual(expect.any(Object));
     });
 });

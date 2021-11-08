@@ -4,8 +4,8 @@ const quotes = require("./seed-data/quotes.js");
 const chickens = require("./seed-data/chickens.js");
 
 const seedTables = async () => {
-    await characters.map((character) => {
-        return pool.query(
+    await characters.map(async (character) => {
+        return await pool.query(
             `
                 INSERT INTO characters (name, full_name, aliases, pic, actor)
                 VALUES ($1, $2, $3, $4, $5);

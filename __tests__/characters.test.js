@@ -3,6 +3,8 @@ const setup = require("../data/setup.js");
 const request = require("supertest");
 const app = require("../lib/app.js");
 
+// jest.mock("supertest");
+
 describe("character routes", () => {
     beforeEach(() => {
         return setup(pool);
@@ -12,7 +14,7 @@ describe("character routes", () => {
         pool.end();
     });
 
-    it.only("returns all characters", async () => {
+    it("returns all characters", async () => {
         const data = await request(app)
             .get("/characters")
             .expect("Content-Type", /json/)
@@ -24,7 +26,7 @@ describe("character routes", () => {
         const expectation = {
             id: 1,
             name: "Michael",
-            full_name: "Michael Bluth",
+            fullName: "Michael Bluth",
             aliases: "Nichael Bluth, Chareth Cutestory",
             pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/f/f7/1x01_Pilot_%2809%29.png/revision/latest?cb=20120301043946",
             actor: "Jason Bateman",
@@ -37,12 +39,12 @@ describe("character routes", () => {
         expect(data.body).toEqual(expectation);
     });
 
-    it("returns all characters with a name that contains the search query", async () => {
+    xit("returns all characters with a name that contains the search query", async () => {
         const expectation = [
             {
                 id: 1,
                 name: "Michael",
-                full_name: "Michael Bluth",
+                fullName: "Michael Bluth",
                 aliases: "Nichael Bluth, Chareth Cutestory",
                 pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/f/f7/1x01_Pilot_%2809%29.png/revision/latest?cb=20120301043946",
                 actor: "Jason Bateman",
@@ -50,7 +52,7 @@ describe("character routes", () => {
             {
                 id: 4,
                 name: "George Michael",
-                full_name: "George Michael Bluth",
+                fullName: "George Michael Bluth",
                 aliases: "George Maharis, Mr. Manager",
                 pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/c/c3/Season_1_Character_Promos_-_George_Michael_Bluth_02.jpeg/revision/latest?cb=20120429230332",
                 actor: "Michael Cera",

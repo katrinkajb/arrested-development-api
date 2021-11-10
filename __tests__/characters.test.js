@@ -3,8 +3,6 @@ const setup = require("../data/setup.js");
 const request = require("supertest");
 const app = require("../lib/app.js");
 
-// jest.mock("supertest");
-
 describe("character routes", () => {
     beforeEach(() => {
         return setup(pool);

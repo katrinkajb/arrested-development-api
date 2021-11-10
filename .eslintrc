@@ -4,7 +4,6 @@
         "sourceType": "module"
     },
     "env": {
-        "es6": true,
         "node": true,
         "jest": true
     },
@@ -18,7 +17,6 @@
                 "SwitchCase": 1
             }
         ],
-        // "quotes": ["error", "single"],
         "semi": ["error", "always"],
         "space-in-parens": ["error"],
         "space-infix-ops": "error",

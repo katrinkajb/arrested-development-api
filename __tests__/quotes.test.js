@@ -1,67 +1,54 @@
 require("dotenv").config();
-const { execSync } = require("child_process");
 const fakeRequest = require("supertest");
-const app = require("../data/lib/app");
-const client = require("../data/lib/client");
+const app = require("../lib/app");
+const setup = require("../data/setup");
+const pool = require("../lib/utils/pool");
 
 describe("app routes", () => {
-    beforeAll(async () => {
-        execSync("npm run setup-db");
-
-        await client.connect();
-    }, 20000);
-
-    afterAll((done) => {
-        return client.end(done);
+    beforeEach(() => {
+        return setup(pool);
     });
 
-    describe("quotes tests", () => {
-        test("returns all quotes", async () => {
-            const data = await fakeRequest(app)
-                .get("/quotes")
-                .expect("Content-Type", /json/)
-                .expect(200);
-            expect(data.body).toEqual(expect.any(Array));
-        });
+    afterAll((done) => {
+        return pool.end(done);
+    });
 
-        test("returns all quotes for one character by character id", async () => {
-            const data = await fakeRequest(app)
-                .get("/quotes/9")
-                .expect("Content-Type", /json/)
-                .expect(200);
-            expect(data.body).toEqual(expect.any(Array));
-        });
+    it("returns all quotes", async () => {
+        const data = await fakeRequest(app)
+            .get("/quotes")
+            .expect("Content-Type", /json/)
+            .expect(200);
+        expect(data.body).toEqual(expect.any(Array));
+    });
 
-        test("returns all quotes by search query", async () => {
-            const data = await fakeRequest(app)
-                .get("/quotes/search/Banana")
-                .expect("Content-Type", /json/)
-                .expect(200);
-            expect(data.body).toEqual([
-                {
-                    id: 24,
+    it("returns all quotes for one character by character name", async () => {
+        const data = await fakeRequest(app)
+            .get("/quotes/Lucille")
+            .expect("Content-Type", /json/)
+            .expect(200);
+        expect(data.body).toEqual(expect.any(Array));
+    });
+
+    it("returns all quotes by search query", async () => {
+        const data = await fakeRequest(app)
+            .get("/quotes/search/Banana")
+            .expect("Content-Type", /json/)
+            .expect(200);
+        expect(data.body).toEqual(
+            expect.arrayContaining([
+                expect.objectContaining({
                     quote: "I mean it’s one banana Michael, what could it cost, $10?",
-                    said_by: 9,
-                },
-                {
-                    id: 59,
-                    quote: "Why go to a banana stand when we can make your banana stand?",
-                    said_by: 3,
-                },
-                {
-                    id: 76,
-                    quote: "There's always money in the banana stand",
-                    said_by: 4,
-                },
-            ]);
-        });
+                    saidBy: "Lucille",
+                }),
+            ])
+        );
+    });
 
-        test("returns a random quote", async () => {
-            const data = await fakeRequest(app)
-                .get("/quotes/random")
-                .expect("Content-Type", /json/)
-                .expect(200);
-            expect(data.body).toEqual(expect.any(Object));
-        });
+    it("returns a random quote", async () => {
+        const data = await fakeRequest(app)
+            .get("/quotes/random")
+            .expect("Content-Type", /json/)
+            .expect(200);
+        expect(data.body).toEqual(expect.any(Object));
     });
 });

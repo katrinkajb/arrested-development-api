@@ -34,3 +34,7 @@ img {
 .title {
     font-weight: 600;
 }
+
+.underline {
+    text-decoration: underline;
+}

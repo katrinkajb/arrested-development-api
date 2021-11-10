@@ -6,6 +6,8 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     color: rgb(0, 3, 17);
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
 }
 
 main {
@@ -33,8 +35,4 @@ img {
 
 .title {
     font-weight: 600;
-}
-
-.underline {
-    text-decoration: underline;
 }

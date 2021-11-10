@@ -114,8 +114,8 @@ module.exports = [
     {
         name: "J. Walter Weatherman",
         full_name: "J. Walter Weatherman",
-        aliases: "J",
+        aliases: "J, The one-armed man",
         pic: "https://static.wikia.nocookie.net/arresteddevelopment/images/6/66/1x10_Pier_Pressure_%2840%29.png/revision/latest/scale-to-width-down/1000?cb=20120229061140",
-        actor: "",
+        actor: "Steve Ryan",
     },
 ];

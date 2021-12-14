@@ -1,15 +1,15 @@
-const pool = require("../lib/utils/pool.js");
-const characters = require("./seed-data/characters.js");
-const quotes = require("./seed-data/quotes.js");
-const chickens = require("./seed-data/chickens.js");
+const pool = require('../lib/utils/pool.js');
+const characters = require('./seed-data/characters.js');
+const quotes = require('./seed-data/quotes.js');
+const chickens = require('./seed-data/chickens.js');
 
 const seedTables = async () => {
     await characters.map(async (character) => {
         return await pool.query(
             `
-                INSERT INTO characters (name, full_name, aliases, pic, actor)
-                VALUES ($1, $2, $3, $4, $5);
-                `,
+            INSERT INTO characters (name, full_name, aliases, pic, actor)
+            VALUES ($1, $2, $3, $4, $5);
+            `,
             [
                 character.name,
                 character.full_name,

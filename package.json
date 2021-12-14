@@ -20,8 +20,8 @@
     "devDependencies": {
         "@babel/eslint-parser": "^7.15.7",
         "@babel/plugin-syntax-class-properties": "^7.12.13",
-        "@types/pg": "^8.6.1",
         "@types/jest": "^26.0.20",
+        "@types/pg": "^8.6.1",
         "eslint": "^7.20.0",
         "jest": "^27.0.4",
         "nodemon": "^2.0.7",

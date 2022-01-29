@@ -14,23 +14,26 @@ describe('character routes', () => {
     });
 
     it('returns all characters', async () => {
-        // const allChar = [
-        //     {
-        //         id: 1,
-        //         name: 'Michael',
-        //         fullName: 'Michael Bluth',
-        //         aliases: 'Nichael Bluth, Chareth Cutestory',
-        //         pic: 'https://static.wikia.nocookie.net/arresteddevelopment/images/f/f7/1x01_Pilot_%2809%29.png/revision/latest?cb=20120301043946',
-        //         actor: 'Jason Bateman',
-        //     },
-        // ];
-
         const data = await request(app)
             .get('/characters')
             .expect('Content-Type', /json/)
             .expect(200);
 
         expect(data.body).toEqual(expect.arrayContaining([expect.any(Object)]));
+        // expect(data.body).toEqual(
+        //     expect.arrayContaining([
+        //         expect.any(
+        //             expect.objectContaining({
+        //                 id: expect.any(Number),
+        //                 name: expect.any(String),
+        //                 full_name: expect.any(String),
+        //                 aliases: expect.any(String),
+        //                 pic: expect.any(String),
+        //                 actor: expect.any(String),
+        //             })
+        //         ),
+        //     ])
+        // );
     });
 
     it('returns the character with the id of 1', async () => {
@@ -42,6 +45,11 @@ describe('character routes', () => {
         expect(data.body).toEqual(
             expect.objectContaining({
                 id: 1,
+                // name: expect.any(String),
+                // full_name: expect.any(String),
+                // aliases: expect.any(String),
+                // pic: expect.any(String),
+                // actor: expect.any(String),
             })
         );
     });
@@ -69,6 +77,17 @@ describe('character routes', () => {
             .get('/characters/random')
             .expect('Content-Type', /json/)
             .expect(200);
+
         expect(data.body).toEqual(expect.any(Object));
+        // expect(data.body).toEqual(
+        //     expect.objectContaining({
+        //         id: expect.any(Number),
+        //         name: expect.any(String),
+        //         full_name: expect.any(String),
+        //         aliases: expect.any(String),
+        //         pic: expect.any(String),
+        //         actor: expect.any(String),
+        //     })
+        // );
     });
 });

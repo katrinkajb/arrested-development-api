@@ -6,6 +6,7 @@ const chickens = require('./seed-data/chickens.js');
 const seedTables = async () => {
     try {
         await Promise.all(
+            // Use reduce here instead of mapping to force synchronous loading
             characters.map(async (character) => {
                 await pool.query(
                     `

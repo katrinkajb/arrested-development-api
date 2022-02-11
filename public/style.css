@@ -2,11 +2,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("https://static.vecteezy.com/system/resources/previews/000/629/095/original/hand-drawn-banana-pattern-vector.jpg");
+    background: url('https://static.vecteezy.com/system/resources/previews/000/629/095/original/hand-drawn-banana-pattern-vector.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     color: rgb(0, 3, 17);
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
         sans-serif;
 }
 

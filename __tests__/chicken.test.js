@@ -13,7 +13,6 @@ describe('app routes', () => {
         return pool.end(done);
     });
 
-    // {url: expect.any(String)}
     describe('Chicken dance tests', () => {
         test('returns all chicken dance gifs', async () => {
             const data = await fakeRequest(app)

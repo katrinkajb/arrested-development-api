@@ -20,20 +20,6 @@ describe('character routes', () => {
             .expect(200);
 
         expect(data.body).toEqual(expect.arrayContaining([expect.any(Object)]));
-        // expect(data.body).toEqual(
-        //     expect.arrayContaining([
-        //         expect.any(
-        //             expect.objectContaining({
-        //                 id: expect.any(Number),
-        //                 name: expect.any(String),
-        //                 full_name: expect.any(String),
-        //                 aliases: expect.any(String),
-        //                 pic: expect.any(String),
-        //                 actor: expect.any(String),
-        //             })
-        //         ),
-        //     ])
-        // );
     });
 
     it('returns the character with the id of 1', async () => {
@@ -45,11 +31,6 @@ describe('character routes', () => {
         expect(data.body).toEqual(
             expect.objectContaining({
                 id: 1,
-                // name: expect.any(String),
-                // full_name: expect.any(String),
-                // aliases: expect.any(String),
-                // pic: expect.any(String),
-                // actor: expect.any(String),
             })
         );
     });
@@ -79,15 +60,5 @@ describe('character routes', () => {
             .expect(200);
 
         expect(data.body).toEqual(expect.any(Object));
-        // expect(data.body).toEqual(
-        //     expect.objectContaining({
-        //         id: expect.any(Number),
-        //         name: expect.any(String),
-        //         full_name: expect.any(String),
-        //         aliases: expect.any(String),
-        //         pic: expect.any(String),
-        //         actor: expect.any(String),
-        //     })
-        // );
     });
 });

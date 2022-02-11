@@ -13,10 +13,6 @@ describe('app routes', () => {
         return pool.end(done);
     });
 
-    //  {
-    //     quote: expect.any(String),
-    //     said_by: expect.any(String),
-    // },
     it('returns all quotes', async () => {
         const data = await fakeRequest(app)
             .get('/quotes')
